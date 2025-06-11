@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    container_name: skill-tree-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules  # Prevent node_modules override
+    command: npm run dev -- --host
